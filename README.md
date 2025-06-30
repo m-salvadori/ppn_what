@@ -10,10 +10,15 @@ des informations sur la localisation des PPN.
 
 Depuis le terminal, lancer le script suivi du chemin vers le fichier qui contient les PPN (1 PPN par ligne) et des zones bibliographiques MarcXML à interroger.
 
-Exemple pour lancer le script à prtir d'un dossier qui contient à la fois le script et le fichier de PPN :
+Exemple pour lancer le script à partir d'un dossier qui contient à la fois le script et le fichier de PPN :
 
 ```bash
 ./ppn_what.py ppn_sample.txt -z 010 200
+```
+ou (selon votre configuration) :
+
+```powershell
+python ppn_what.py ppn_sample.txt -z 010 200
 ```
 
 ### Prérequis
@@ -22,8 +27,8 @@ Python 3 + request library
 
 ### Limitations
 
-La disctinction entre zones et sous-zones fonctionne pour l'instant plutôt mal que bien : il est pour l'instant impossible de restreindre
-la récupération précise du contenu situé entre deux balises *subfields*. Entrer 200$a en ligne de commande produira les mêmes résultas que 200.
+La disctinction entre zones et sous-zones fonctionne à l'heure actuelle plutôt mal que bien : il est pour l'instant impossible de restreindre
+la récupération précise du contenu situé entre deux balises *subfields*. Entrer 200$a en ligne de commande conduira de fait aux mêmes résultats que 200.
 
 Il est recommandé de limiter à quelques centaines le nombre de PPN sur lesquels faire porter la requête.
 
@@ -33,5 +38,5 @@ et partage donc ses particularités (déviations par rapport au format UNIMARC) 
 ## To-do
 
 - [ ] régler le problème d'extraction précise des subfields
-- [ ] simplifier le for loop en suite de fonctions
+- [ ] transformer le *for loop* en suite de fonctions
 - [ ] clarifier le nom de certaines variables
